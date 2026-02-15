@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>STB BARBER</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0f0f0f">
+
+<style>
+:root{
+  --black:#0f0f0f;
+  --graphite:#1c1c1c;
+  --gray:#6f6f6f;
+  --border:#e5e5e5;
+  --bg:#f7f7f7;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  background:var(--bg);
+  font-family:"Inter Tight","IBM Plex Sans","Helvetica Neue",Arial,system-ui,sans-serif;
+  display:flex;
+  justify-content:center;
+  padding:24px 16px;
+  text-align:center;
+  color:var(--black);
+}
+
+.container{
+  max-width:420px;
+  width:100%;
+  background:#fff;
+  border-radius:18px;
+  padding:28px 24px 32px;
+}
+
+/* PROFILE */
+.profile{
+  display:flex;
+  justify-content:center;
+  margin-bottom:16px;
+}
+.profile img{
+  width:96px;
+  height:96px;
+  border-radius:50%;
+  border:2px solid var(--border);
+  object-fit:cover;
+}
+
+h1{font-size:22px;letter-spacing:1.4px;margin-bottom:6px}
+.badge{font-size:11px;letter-spacing:1.6px;color:var(--gray);margin-bottom:14px}
+.tagline{font-size:13px;margin-bottom:20px}
+
+/* AUDIO */
+audio{width:100%;margin-bottom:22px}
+
+/* LOCATION */
+.location{
+  font-size:12px;
+  color:var(--gray);
+  letter-spacing:.8px;
+  margin-bottom:24px;
+}
+
+/* SLIDESHOW */
+.slideshow{
+  position:relative;
+  height:210px;
+  border-radius:14px;
+  overflow:hidden;
+  margin-bottom:26px;
+}
+.slideshow img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  animation:fade 15s infinite;
+}
+.slideshow img:nth-child(1){animation-delay:0s}
+.slideshow img:nth-child(2){animation-delay:5s}
+.slideshow img:nth-child(3){animation-delay:10s}
+
+@keyframes fade{
+  0%{opacity:0}
+  10%{opacity:1}
+  33%{opacity:1}
+  43%{opacity:0}
+  100%{opacity:0}
+}
+
+/* ACTIONS */
+.actions{
+  display:flex;
+  gap:12px;
+  margin-bottom:30px;
+}
+.btn{
+  flex:1;
+  padding:15px 12px;
+  border-radius:12px;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.btn.primary{background:var(--black);color:#fff}
+.btn.secondary{background:var(--graphite);color:#fff}
+
+/* SERVICES */
+details{margin-bottom:30px}
+summary{
+  padding:16px;
+  background:#111;
+  color:#fff;
+  border-radius:14px;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+summary::-webkit-details-marker{display:none}
+.service{padding:16px 0;border-bottom:1px solid var(--border)}
+.service-name{font-size:14px;font-weight:600}
+.service-meta{font-size:12px;color:var(--gray);margin-top:6px}
+
+/* CRAFT — NEW, CLEAN, INTENTIONAL */
+.craft{
+  margin-bottom:30px;
+}
+.craft-title{
+  font-size:13px;
+  letter-spacing:1.4px;
+  margin-bottom:14px;
+  text-transform:uppercase;
+}
+.craft-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+.craft-grid img{
+  width:100%;
+  height:170px;
+  border-radius:14px;
+  object-fit:cover;
+  cursor:pointer;
+}
+
+/* EXPLORE */
+.explore{
+  margin-bottom:20px;
+}
+.explore a{
+  display:inline-block;
+  padding:14px 18px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
+  color:var(--black);
+  text-decoration:none;
+}
+
+footer{
+  font-size:11px;
+  color:var(--gray);
+  letter-spacing:.8px;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<div class="profile">
+  <img src="profile.jpg" alt="STB BARBER">
+</div>
+
+<h1>STB BARBER</h1>
+<div class="badge">SHOPYSTREET BARBER</div>
+<div class="tagline">PRECISION CUTS · CLEAN FADES · MODERN CRAFT</div>
+
+<audio controls>
+  <source src="stb.mp3" type="audio/mpeg">
+</audio>
+
+<div class="location">HARARE · MON–SAT · 08:00–18:00</div>
+
+<div class="slideshow">
+  <img src="slide1.jpg">
+  <img src="slide2.jpg">
+  <img src="slide3.jpg">
+</div>
+
+<div class="actions">
+  <a class="btn secondary" href="tel:+263779068932">CALL BARBER</a>
+  <a class="btn primary" href="https://wa.me/263779068932">BOOK APPOINTMENT</a>
+</div>
+
+<details>
+<summary>SERVICES</summary>
+<div class="service"><div class="service-name">BASIC HAIRCUT</div><div class="service-meta">5USD to 7USD · 20–30 MINS</div></div>
+<div class="service"><div class="service-name">FADE / TAPER</div><div class="service-meta">10USD to 20USD · 30–45 MINS</div></div>
+<div class="service"><div class="service-name">BEARD TRIM</div><div class="service-meta">3USD to 5USD · 15 MINS</div></div>
+<div class="service"><div class="service-name">DESIGN CUT</div><div class="service-meta">FROM 15USD</div></div>
+</details>
+
+<!-- CRAFT (NEW) -->
+<div class="craft">
+  <div class="craft-title">OUR CRAFT</div>
+  <div class="craft-grid">
+    <img src="cut1.jpg">
+    <img src="cut3.jpg">
+    <img src="cut4.jpg">
+    <img src="cut6.jpg">
+  </div>
+</div>
+
+<div class="explore">
+  <a href="https://warstreetdigital.github.io/Shopystreet-/Explore/">EXPLORE OTHER STORES</a>
+</div>
+
+<footer>Powered by Shopystreet</footer>
+
+</div>
+
+<!-- MODAL -->
+<div id="imageModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;align-items:center;justify-content:center">
+  <img id="modalImg" style="max-width:92%;max-height:92%;border-radius:12px">
+</div>
+
+<script>
+const modal=document.getElementById("imageModal");
+const modalImg=document.getElementById("modalImg");
+document.querySelectorAll(".craft-grid img").forEach(img=>{
+  img.onclick=()=>{
+    modal.style.display="flex";
+    modalImg.src=img.src;
+  };
+});
+modal.onclick=()=>{
+  modal.style.display="none";
+  modalImg.src="";
+};
+</script>
+
+</body>
+</html>
